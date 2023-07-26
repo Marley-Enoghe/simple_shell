@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * handle_sigint -  This is the Signal handler for SIGINT 
+ * handle_sigint -This is the Signal handler for SIGINT
  * @sig: The Signal number
  *
  * Return: returns nothing
@@ -13,7 +13,7 @@ void handle_sigint(int sig)
 }
 
 /**
- * handle_sigquit - This is the signal handler for SIGQUIT 
+ * handle_sigquit -This is the signal handler for SIGQUIT
  * @sig: The Signal number
  *
  * Return: Returns nothing
@@ -26,7 +26,7 @@ void handle_sigquit(int sig)
 }
 
 /**
- * handle_sigstp - This is a Signal handler for SIGTSTP 
+ * handle_sigstp -This is a Signal handler for SIGTSTP
  * @sig: The Signal number
  *
  * Return: Returns nothing
