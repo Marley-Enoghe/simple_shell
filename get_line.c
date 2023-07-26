@@ -9,10 +9,10 @@ void *get_line(void)
 {
 	static char buffer[BUFFER_SIZE];
 	static int buf_poss, buf_sizee;
-    char current_char;
+	char current_char;
 	int input_len = 0;
 	char *input_str = NULL;
-	
+
 	while (1)
 	{
 		if (buf_poss >= buf_sizee)
