@@ -3,8 +3,8 @@
 /**
  * cmp_env_name-compares env variables names
  * with the name passed.
- * @nenv: name of the env variable
- * @name: name passed
+ * @n_env: name of the env variable
+ * @namme: name passed
  *
  * Return: 0 if not equal. other value if equal.
  */
@@ -25,7 +25,7 @@ int cmp_env_name(const char *n_env, const char *namme)
 
 /**
  * _getenv - get an env variable
- * @name: name of the env variable
+ * @namme: name of the env variable
  * @_environ: envir variable
  *
  * Return: value of the env variable if found.
@@ -55,7 +55,7 @@ char *_getenv(const char *namme, char **_environ)
 /**
  * _env - prints the env variables
  *
- * @datash: data relevant.
+ * @dattash: data relevant.
  * Return: 1 on success.
  */
 int _env(data_shell *dattash)
@@ -79,7 +79,7 @@ int _env(data_shell *dattash)
 /**
  * copy_info - copies info to create
  * a new env or alias
- * @name: name (env or alias)
+ * @namme: name (env or alias)
  * @value: value (env or alias)
  *
  * Return: new env or alias.
@@ -104,9 +104,9 @@ char *copy_info(char *namme, char *value)
 /**
  * set_env - sets an env variable
  *
- * @name: name of the envvariable
+ * @namme: name of the envvariable
  * @value: value of the env variable
- * @datash: data structure (environ)
+ * @dattash: data structure (environ)
  * Return: no return
  */
 void set_env(char *namme, char *value, data_shell *dattash)
@@ -136,7 +136,7 @@ void set_env(char *namme, char *value, data_shell *dattash)
 /**
  * _setenv - compares env variables names
  * with the name passed.
- * @datash: data (env name, env value)
+ * @dattash: data (env name, env value)
  *
  * Return: 1 on success.
  */
@@ -157,7 +157,7 @@ int _setenv(data_shell *dattash)
 /**
  * _unsetenv -deletes a environment variable
  *
- * @datash: data relevant (env name)
+ * @dattash: data relevant (env name)
  *
  * Return: 1 on success.
  */
