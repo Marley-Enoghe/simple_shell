@@ -4,7 +4,7 @@
  * _getenv - Used for getting the value of an environment variable
  * @name: This is the name of the environment variable
  *
- * Return: To return the value of the environment variable, or return NULL if it doesn't exist
+ * Return: To return environment variable, or return NULL if doesn't exist
  */
 char *_getenv(const char *name)
 {
