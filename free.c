@@ -19,7 +19,7 @@ void free_error(char **argv, char *arg)
 }
 
 /**
- * free_tokens -this is used to free the memory allocated dynamically by tokenize()
+ * free_tokens -to free the memory allocated dynamically by tokenize()
  * @ptr: This is a pointer to allocated memory
  *
  * Return: void to be returned.
@@ -35,7 +35,7 @@ void free_tokens(char **ptr)
 
 
 /**
- * free_path - Used for freeing the global variable containing the PATH environment
+ * free_path -freeing the global variable containing the PATH environment
  *             variable value
  *
  * Return: Nothing to be reduced

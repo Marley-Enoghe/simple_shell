@@ -40,8 +40,8 @@ char *get_input(void)
 /**
  * free_last_input - For freeing the most recent input entered by the user.
  *
- * This is a function for freeing the memory allocated for the most recent input string
- * entered by the user. which should be called after the input string is no longer
+ * for freeing the memory allocated for the most recent input string
+ * which should be called after the input string is no longer
  * needed.
  */
 void free_last_input(void)

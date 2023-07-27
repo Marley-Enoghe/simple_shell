@@ -40,10 +40,10 @@ char **tokenize(char *str, const char *delim)
 }
 
 /**
- * tokenize_input - this is used to split a user input string into tokens with tokenize().
+ * tokenize_input - split a user input string into tokens with tokenize().
  * @input: this is the user input string to be tokenized
  *
- * Return: This is an array of pointers to the tokens, or NULL if an error occurs
+ * Return: array of pointers to the tokens, or NULL if an error occurs
  */
 char **tokenize_input(char *input)
 {
