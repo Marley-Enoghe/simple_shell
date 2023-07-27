@@ -30,8 +30,8 @@ void set_data(data_shell *dattash, char **av)
 {
 	unsigned int ii;
 
-	dattash->avv = av;
-	dattash->inputt = NULL;
+	dattash->av = av;
+	dattash->input = NULL;
 	dattash->args = NULL;
 	dattash->status = 0;
 	dattash->counter = 1;
