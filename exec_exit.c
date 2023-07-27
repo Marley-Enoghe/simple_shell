@@ -10,10 +10,10 @@ int exec_line(data_shell *dattash)
 {
 	int (*builtin)(data_shell *dattash);
 
-	if (dattash->argss[0] == NULL)
+	if (dattash->args[0] == NULL)
 		return (1);
 
-	builtin = get_builtin(dattash->argss[0]);
+	builtin = get_builtin(dattash->args[0]);
 
 	if (builtin != NULL)
 		return (builtin(dattash));
@@ -34,11 +34,11 @@ int exit_shell(data_shell *dattash)
 	int str_lenn;
 	int bignumber;
 
-	if (dattash->argss[1] != NULL)
+	if (dattash->args[1] != NULL)
 	{
-		status = _atoi(dattash->argss[1]);
-		_digit = _isdigit(dattash->argss[1]);
-		str_len = _strlen(dattash->argss[1]);
+		status = _atoi(dattash->args[1]);
+		_digit = _isdigit(dattash->args[1]);
+		str_lenn = _strlen(dattash->args[1]);
 		bignumber = status > (unsigned int)INT_MAX;
 		if (!_digit || str_lenn > 10 || bignumber)
 		{
