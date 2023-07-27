@@ -10,13 +10,13 @@
 int _setenv(data_shell *dattash)
 {
 
-	if (dattash->argss[1] == NULL || dattash->argss[2] == NULL)
+	if (dattash->args[1] == NULL || dattash->args[2] == NULL)
 	{
 		get_error(dattash, -1);
 		return (1);
 	}
 
-	set_env(dattash->argss[1], dattash->argss[2], dattash);
+	set_env(dattash->args[1], dattash->args[2], dattash);
 
 	return (1);
 }
@@ -34,7 +34,7 @@ int _unsetenv(data_shell *dattash)
 	char *var_envv, *name_envv;
 	int ii, j, k;
 
-	if (dattash->argss[1] == NULL)
+	if (dattash->args[1] == NULL)
 	{
 		get_error(dattash, -1);
 		return (1);
@@ -44,7 +44,7 @@ int _unsetenv(data_shell *dattash)
 	{
 		var_envv = _strdup(dattash->_environ[ii]);
 		name_envv = _strtok(var_envv, "=");
-		if (_strcmp(name_envv, dattash->argss[1]) == 0)
+		if (_strcmp(name_envv, dattash->args[1]) == 0)
 		{
 			k = ii;
 		}
@@ -56,7 +56,7 @@ int _unsetenv(data_shell *dattash)
 		return (1);
 	}
 	realloc_environ = malloc(sizeof(char *) * (ii));
-	for (ii = j = 0; datash->_environ[ii]; ii++)
+	for (ii = j = 0; dattash->_environ[ii]; ii++)
 	{
 		if (ii != k)
 		{
