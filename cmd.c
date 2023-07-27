@@ -67,16 +67,16 @@ int is_executable(data_shell *dattash)
 	{
 		if (inputt[ii] == '.')
 		{
-			if (input[ii + 1] == '.')
+			if (inputt[ii + 1] == '.')
 				return (0);
-			if (input[ii + 1] == '/')
+			if (inputt[ii + 1] == '/')
 				continue;
 			else
 				break;
 		}
-		else if (input[ii] == '/' && ii != 0)
+		else if (inputt[ii] == '/' && ii != 0)
 		{
-			if (input[ii + 1] == '.')
+			if (inputt[ii + 1] == '.')
 				continue;
 			ii++;
 			break;
