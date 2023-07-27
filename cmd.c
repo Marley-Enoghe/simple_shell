@@ -3,7 +3,7 @@
 /**
  * _which - locates a command
  *
- * @cmd: command name
+ * @cmdd: command name
  * @_environ: environment variable
  * Return: location of command.
  */
@@ -53,17 +53,17 @@ char *_which(char *cmdd, char **_environ)
 /**
  * is_executable - determines if is an executable
  *
- * @datash: data structure
+ * @dattash: data structure
  * Return: 0 if not executable, other no if it does
  */
 int is_executable(data_shell *dattash)
 {
-  struct stat stt;
+	struct stat stt;
 	int ii;
 	char *inputt;
 
 	inputt = dattash->argss[0];
-  for (it = 0; inputt[i]; i++)
+	for (it = 0; inputt[i]; i++)
 	{
 		if (input[ii] == '.')
 		{
@@ -135,7 +135,7 @@ int check_error_cmd(char *diir, data_shell *dattash)
 /**
  * cmd_exec - executes command lines
  *
- * @datash: data relevant(args and input)
+ * @dattash: data relevant(args and input)
  * Return: 1 on success.
  */
 int cmd_exec(data_shell *dattash)
@@ -163,7 +163,7 @@ int cmd_exec(data_shell *dattash)
 		if (exec == 0)
 			diir = _which(dattash->argss[0], dattash->_environ);
 		else
-			dir = datash->argss[0];
+			diir = dattash->argss[0];
 		execve(diir + exec, dattash->argss, dattash->_environ);
 	}
 	else if (pd < 0)
@@ -178,14 +178,14 @@ int cmd_exec(data_shell *dattash)
 		} while (!WIFEXITED(state) && !WIFSIGNALED(state));
 	}
 
-	datash->status = state / 256;
+	dattash->status = state / 256;
 	return (1);
 }
 
 /**
  * is_cdir - checks ":" if in current directory.
  * @path: type char pointer char.
- * @i: type int pointer of index.
+ * @ii: type int pointer of index.
  * Return: 1 if the is exist in cd, 0 otherwise.
  */
 int is_cdir(char *patth, int *ii)

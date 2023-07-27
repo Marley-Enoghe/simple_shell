@@ -3,8 +3,8 @@
 /**
  * cmp_env_name-compares env variables names
  * with the name passed.
- * @nenv: name of the env variable
- * @name: name passed
+ * @n_env: name of the env variable
+ * @namme: name passed
  *
  * Return: 0 if not equal. other value if equal.
  */
@@ -25,7 +25,7 @@ int cmp_env_name(const char *n_env, const char *namme)
 
 /**
  * _getenv - get an env variable
- * @name: name of the env variable
+ * @namme: name of the env variable
  * @_environ: envir variable
  *
  * Return: value of the env variable if found.
@@ -36,8 +36,8 @@ char *_getenv(const char *namme, char **_environ)
 	char *pttr_env;
 	int ii, mmov;
 	pttr_env = NULL;
-	mmov = 0;
 	
+	mmov = 0;
 	for (ii = 0; _environ[ii]; ii++)
 	{
 		/* If name and env are equal */
@@ -55,7 +55,7 @@ char *_getenv(const char *namme, char **_environ)
 /**
  * _env - prints the env variables
  *
- * @datash: data relevant.
+ * @dattash: data relevant.
  * Return: 1 on success.
  */
 int _env(data_shell *dattash)
@@ -79,7 +79,7 @@ int _env(data_shell *dattash)
 /**
  * copy_info - copies info to create
  * a new env or alias
- * @name: name (env or alias)
+ * @namme: name (env or alias)
  * @value: value (env or alias)
  *
  * Return: new env or alias.
@@ -104,9 +104,9 @@ char *copy_info(char *namme, char *value)
 /**
  * set_env - sets an env variable
  *
- * @name: name of the envvariable
+ * @namme: name of the envvariable
  * @value: value of the env variable
- * @datash: data structure (environ)
+ * @dattash: data structure (environ)
  * Return: no return
  */
 void set_env(char *namme, char *value, data_shell *dattash)
@@ -128,78 +128,7 @@ void set_env(char *namme, char *value, data_shell *dattash)
 		free(var_envv);
 	}
 
-	dattash->_environ = _reallocdp(dattash->_environ, ii, sizeof(char *) * (ii + 2));
+	dattash->_environ = _reallocdp(dattash->_environ,ii,sizeof(char *)*(ii +2));
 	dattash->_environ[ii] = copy_info(namme, value);
 	dattash->_environ[ii + 1] = NULL;
-}
-
-/**
- * _setenv - compares env variables names
- * with the name passed.
- * @datash: data (env name, env value)
- *
- * Return: 1 on success.
- */
-int _setenv(data_shell *dattash)
-{
-
-	if (dattash->argss[1] == NULL || dattash->argss[2] == NULL)
-	{
-		get_error(dattash, -1);
-		return (1);
-	}
-
-	set_env(dattash->argss[1], dattash->argss[2], dattash);
-
-	return (1);
-}
-
-/**
- * _unsetenv -deletes a environment variable
- *
- * @datash: data relevant (env name)
- *
- * Return: 1 on success.
- */
-int _unsetenv(data_shell *dattash)
-{
-	char **realloc_environ;
-	char *var_envv, *name_envv;
-	int ii, j, k;
-
-	if (dattash->argss[1] == NULL)
-	{
-		get_error(dattash, -1);
-		return (1);
-	}
-	k = -1;
-	for (ii = 0; dattash->_environ[ii]; ii++)
-	{
-		var_envv = _strdup(dattash->_environ[ii]);
-		name_envv = _strtok(var_envv, "=");
-		if (_strcmp(name_envv, dattash->argss[1]) == 0)
-		{
-			k = ii;
-		}
-		free(var_envv);
-	}
-	if (k == -1)
-	{
-		get_error(dattash, -1);
-		return (1);
-	}
-	realloc_environ = malloc(sizeof(char *) * (ii));
-	for (ii = j = 0; datash->_environ[ii]; ii++)
-	{
-		if (ii != k)
-		{
-			realloc_environ[j] = dattash->_environ[ii];
-			j++;
-		}
-	}
-	realloc_environ[j] = NULL;
-	free(dattash->_environ[k]);
-	free(dattash->_environ);
-	dattash->_environ = realloc_environ;
-	return (1);
 }

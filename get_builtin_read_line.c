@@ -2,7 +2,7 @@
 
 /**
  * get_builtin - builtin the command in the arg
- * @cmd: command
+ * @cmdd: command
  * Return: func pointer of the builtin command
  */
 int (*get_builtin(char *cmdd))(data_shell *)
