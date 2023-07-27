@@ -54,7 +54,7 @@ int _strcmp(char *ss1, char *ss2)
 {
 	int ii;
 
-	for (ii = 0; ss1[ii] == ss2[ii] && ss1[ii];ii++)
+	for (ii = 0; ss1[ii] == ss2[ii] && ss1[ii]; ii++)
 		;
 
 	if (ss1[ii] > ss2[ii])
