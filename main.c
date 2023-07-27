@@ -23,7 +23,7 @@ void free_data(data_shell *dattash)
  * set_data - Initialize data structure
  *
  * @dattash: data structure
- * @avv: argument vector
+ * @av: argument vector
  * Return: no return
  */
 void set_data(data_shell *dattash, char **av)
