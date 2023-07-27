@@ -62,10 +62,10 @@ int is_executable(data_shell *dattash)
 	int ii;
 	char *inputt;
 
-	inputt = dattash->argss[0];
+	inputt = dattash->args[0];
 	for (ii = 0; inputt[ii]; ii++)
 	{
-		if (input[ii] == '.')
+		if (inputt[ii] == '.')
 		{
 			if (input[ii + 1] == '.')
 				return (0);
