@@ -35,9 +35,9 @@ char *_getenv(const char *namme, char **_environ)
 {
 	char *pttr_env;
 	int ii, mmov;
-	
 	pttr_env = NULL;
 	mmov = 0;
+	
 	for (ii = 0; _environ[ii]; ii++)
 	{
 		/* If name and env are equal */
