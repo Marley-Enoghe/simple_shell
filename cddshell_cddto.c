@@ -11,7 +11,7 @@ int cd_shell(data_shell *dattash)
 	char *diir;
 	int ishome, ishome2, isddash;
 
-	diir = dattash->argss[1];
+	diir = dattash->args[1];
 
 	if (diir != NULL)
 	{
@@ -57,7 +57,7 @@ void cd_to(data_shell *dattash)
 
 	getcwd(pwd, sizeof(pwd));
 
-	diir = dattash->argss[1];
+	diir = dattash->args[1];
 	if (chdir(diir) == -1)
 	{
 		get_error(dattash, 2);
