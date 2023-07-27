@@ -61,8 +61,8 @@ char *error_get_cd(data_shell *datash)
 	}
 
 	lengths = _strlen(datash->av[0]) + _strlen(datash->args[0]);
-	lengths += _strlen(ver_strr) + _strlen(msgs) + len_ids + 5;
-	errors = malloc(sizeof(char) * (lengths + 1));
+	lengths += _strlen(ver_str) + _strlen(msg) + len_ids + 5;
+	error = malloc(sizeof(char) * (lengths + 1));
 
 	if (error == 0)
 	{
