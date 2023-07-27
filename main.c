@@ -3,7 +3,7 @@
 /**
  * free_data -free data struct
  *
- * @datash: data struct
+ * @dattash: data struct
  * Return: no return
  */
 void free_data(data_shell *dattash)
@@ -22,8 +22,8 @@ void free_data(data_shell *dattash)
 /**
  * set_data - Initialize data structure
  *
- * @datash: data structure
- * @av: argument vector
+ * @dattash: data structure
+ * @avv: argument vector
  * Return: no return
  */
 void set_data(data_shell *dattash, char **avv)
@@ -53,8 +53,8 @@ void set_data(data_shell *dattash, char **avv)
 /**
  * main - Entry point
  *
- * @ac: argument count
- * @av: argument vector
+ * @acc: argument count
+ * @avv: argument vector
  *
  * Return: 0 on success.
  */
