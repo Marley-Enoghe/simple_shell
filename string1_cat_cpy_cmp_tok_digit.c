@@ -11,7 +11,7 @@ char *_strcat(char *destt, const char *ssrc)
 	int ii;
 	int j;
 
-	for (ii = 0; dest[ii] != '\0'; ii++)
+	for (ii = 0; destt[ii] != '\0'; ii++)
 		;
 
 	for (j = 0; ssrc[j] != '\0'; j++)
@@ -122,7 +122,7 @@ char *_strtok(char str[], const char *delim)
  */
 int _isdigit(const char *s)
 {
-	unsigned int i;
+	unsigned int ii;
 
 	for (ii = 0; s[ii]; ii++)
 	{

@@ -10,23 +10,23 @@ int get_help(data_shell *dattash)
 
 	if (dattash->args[1] == 0)
 		aux_help_general();
-	else if (_strcmp(dattash->argss[1], "setenv") == 0)
+	else if (_strcmp(dattash->args[1], "setenv") == 0)
 		aux_help_setenv();
-	else if (_strcmp(dattash->argss[1], "env") == 0)
+	else if (_strcmp(dattash->args[1], "env") == 0)
 		aux_help_env();
-	else if (_strcmp(dattash->argss[1], "unsetenv") == 0)
+	else if (_strcmp(dattash->args[1], "unsetenv") == 0)
 		aux_help_unsetenv();
-	else if (_strcmp(dattash->argss[1], "help") == 0)
+	else if (_strcmp(dattash->args[1], "help") == 0)
 		aux_help();
-	else if (_strcmp(dattash->argss[1], "exit") == 0)
+	else if (_strcmp(dattash->args[1], "exit") == 0)
 		aux_help_exit();
-	else if (_strcmp(dattash->argss[1], "cd") == 0)
+	else if (_strcmp(dattash->args[1], "cd") == 0)
 		aux_help_cd();
-	else if (_strcmp(dattash->argss[1], "alias") == 0)
+	else if (_strcmp(dattash->args[1], "alias") == 0)
 		aux_help_alias();
 	else
-		write(STDERR_FILENO, dattash->argss[0],
-		      _strlen(dattash->argss[0]));
+		write(STDERR_FILENO, dattash->args[0],
+		      _strlen(dattash->args[0]));
 
 	dattash->status = 0;
 	return (1);

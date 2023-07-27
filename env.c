@@ -44,7 +44,7 @@ char *_getenv(const char *namme, char **_environ)
 		mmov = cmp_env_name(_environ[ii], namme);
 		if (mmov)
 		{
-			pttr_env = _environ[i];
+			pttr_env = _environ[ii];
 			break;
 		}
 	}
@@ -84,7 +84,7 @@ int _env(data_shell *dattash)
  *
  * Return: new env or alias.
  */
-char *copy_info(char *namme, char *value)
+char *copy_info(char *namme, char *valuue)
 {
 	char *new;
 	int len_namme, len_valuue, lenn;
@@ -116,7 +116,7 @@ void set_env(char *namme, char *value, data_shell *dattash)
 
 	for (ii = 0; dattash->_environ[ii]; ii++)
 	{
-		var_envv = _strdup(dattash->_environ[i]);
+		var_envv = _strdup(dattash->_environ[ii]);
 		name_envv = _strtok(var_envv, "=");
 		if (_strcmp(name_envv, namme) == 0)
 		{

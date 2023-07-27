@@ -26,13 +26,13 @@ void free_data(data_shell *dattash)
  * @avv: argument vector
  * Return: no return
  */
-void set_data(data_shell *dattash, char **avv)
+void set_data(data_shell *dattash, char **av)
 {
 	unsigned int ii;
 
-	dattash->avv = avv;
-	dattash->inputt = NULL;
-	dattash->argss = NULL;
+	dattash->av = av;
+	dattash->input = NULL;
+	dattash->args = NULL;
 	dattash->status = 0;
 	dattash->counter = 1;
 
@@ -54,17 +54,17 @@ void set_data(data_shell *dattash, char **avv)
  * main - Entry point
  *
  * @acc: argument count
- * @avv: argument vector
+ * @av: argument vector
  *
  * Return: 0 on success.
  */
-int main(int acc, char **avv)
+int main(int acc, char **av)
 {
 	data_shell dattash;
 	(void) acc;
 
 	signal(SIGINT, get_sigint);
-	set_data(&dattash, avv);
+	set_data(&dattash, av);
 	shell_loop(&dattash);
 	free_data(&dattash);
 	if (dattash.status < 0)

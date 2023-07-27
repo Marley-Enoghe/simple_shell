@@ -9,7 +9,7 @@
  */
 int repeated_char(char *inputt, int ii)
 {
-	if (*(inputt - 1) == *input)
+	if (*(inputt - 1) == *inputt)
 		return (repeated_char(inputt - 1, ii + 1));
 
 	return (ii);
@@ -33,7 +33,7 @@ int error_sep_op(char *inputt, int ii, char last)
 		return (0);
 
 	if (*inputt == ' ' || *inputt == '\t')
-		return (error_sep_op(input + 1, ii + 1, last));
+		return (error_sep_op(inputt + 1, ii + 1, last));
 
 	if (*inputt == ';')
 		if (last == '|' || last == '&' || last == ';')
@@ -80,10 +80,10 @@ int first_char(char *inputt, int *ii)
 
 	for (*ii = 0; inputt[*ii]; *ii += 1)
 	{
-		if (inpuyt[*ii] == ' ' || inputt[*ii] == '\t')
+		if (inputt[*ii] == ' ' || inputt[*ii] == '\t')
 			continue;
 
-		if (inputt[*ii] == ';' || inputt[*ii] == '|' || input[*ii] == '&')
+		if (inputt[*ii] == ';' || inputt[*ii] == '|' || inputt[*ii] == '&')
 			return (-1);
 
 		break;
@@ -106,7 +106,7 @@ void print_syntax_error(data_shell *dattash, char *inputt, int ii, int bool)
 	char *msg, *msg2, *msg3, *error, *counter;
 	int length;
 
-	if (input[ii] == ';')
+	if (inputt[ii] == ';')
 	{
 		if (bool == 0)
 			msg = (inputt[ii + 1] == ';' ? ";;" : ";");
