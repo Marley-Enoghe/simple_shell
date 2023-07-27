@@ -15,7 +15,7 @@ void cd_dot(data_shell *dattash)
 	getcwd(pwd, sizeof(pwd));
 	cp_pwd = _strdup(pwd);
 	set_env("OLDPWD", cp_pwd, dattash);
-	diir = dattash->argss[1];
+	diir = dattash->args[1];
 	if (_strcmp(".", diir) == 0)
 	{
 		set_env("PWD", cp_pwd, dattash);
