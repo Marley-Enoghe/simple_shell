@@ -35,8 +35,8 @@ char *_getenv(const char *namme, char **_environ)
 {
 	char *pttr_env;
 	int ii, mmov;
-	pttr_env = NULL;
 	
+	pttr_env = NULL;
 	mmov = 0;
 	for (ii = 0; _environ[ii]; ii++)
 	{
@@ -106,29 +106,29 @@ char *copy_info(char *namme, char *valuue)
  *
  * @namme: name of the envvariable
  * @value: value of the env variable
- * @dattash: data structure (environ)
+ * @daash: data structure (environ)
  * Return: no return
  */
-void set_env(char *namme, char *value, data_shell *dattash)
+void set_env(char *namme, char *value, data_shell *daash)
 {
 	int ii;
 	char *var_envv, *name_envv;
 
-	for (ii = 0; dattash->_environ[ii]; ii++)
+	for (ii = 0; daash->_environ[ii]; ii++)
 	{
-		var_envv = _strdup(dattash->_environ[ii]);
+		var_envv = _strdup(daash->_environ[ii]);
 		name_envv = _strtok(var_envv, "=");
 		if (_strcmp(name_envv, namme) == 0)
 		{
-			free(dattash->_environ[ii]);
-			dattash->_environ[ii] = copy_info(name_envv, value);
+			free(daash->_environ[ii]);
+			daash->_environ[ii] = copy_info(name_envv, value);
 			free(var_envv);
 			return;
 		}
 		free(var_envv);
 	}
 
-	dattash->_environ = _reallocdp(dattash->_environ,ii,sizeof(char *)*(ii +2));
-	dattash->_environ[ii] = copy_info(namme, value);
-	dattash->_environ[ii + 1] = NULL;
+	daash->_environ = _reallocdp(daash->_environ, ii, sizeof(char *) * (ii + 2));
+	daash->_environ[ii] = copy_info(namme, value);
+	daash->_environ[ii + 1] = NULL;
 }
