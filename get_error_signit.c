@@ -22,9 +22,9 @@ int get_error(data_shell *dattash, int eval)
 		error = error_not_found(dattash);
 		break;
 	case 2:
-		if (_strcmp("exit", dattash->argss[0]) == 0)
+		if (_strcmp("exit", dattash->args[0]) == 0)
 			error = error_exit_shell(dattash);
-		else if (_strcmp("cd", datash->argss[0]) == 0)
+		else if (_strcmp("cd", dattash->args[0]) == 0)
 			error = error_get_cd(dattash);
 		break;
 	}
