@@ -192,9 +192,9 @@ char **split_line(char *inputt)
 	ttoken = _strtok(inputt, TOK_DELIM);
 	tokenss[0] = ttoken;
 
-	for (ii = 1; token != NULL; ii++)
+	for (ii = 1; ttoken != NULL; ii++)
 	{
-		if (i == bsize)
+		if (ii == bsize)
 		{
 			bsize += TOK_BUFSIZE;
 			tokenss = _reallocdp(tokenss, ii, sizeof(char *) * bsize);
