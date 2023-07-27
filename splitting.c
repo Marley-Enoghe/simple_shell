@@ -84,7 +84,7 @@ void add_nodes(sep_list **head_s, line_list **head_l, char *input)
  *
  * @list_s: separator list
  * @list_l: command line list
- * @datash: data structure
+ * @dattash: data structure
  * Return: no return
  */
 void go_next(sep_list **list_s, line_list **list_l, data_shell *dattash)
