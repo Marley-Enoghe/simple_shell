@@ -139,17 +139,17 @@ int split_commands(data_shell *dattash, char *inputt)
 	head_s = NULL;
 	head_l = NULL;
 
-	add_nodes(&head_s, &head_l, input);
+	add_nodes(&head_s, &head_l, inputt);
 
 	list_s = head_s;
 	list_l = head_l;
 
 	while (list_l != NULL)
 	{
-		datash->inputt = list_l->line;
-		datash->argss = split_line(dattash->inputt);
+		dattash->input = list_l->line;
+		dattash->args = split_line(dattash->input);
 		loop = exec_line(dattash);
-		free(dattash->argss);
+		free(dattash->args);
 
 		if (loop == 0)
 			break;
@@ -174,7 +174,7 @@ int split_commands(data_shell *dattash, char *inputt)
  * @input: input string.
  * Return: string splitted.
  */
-char **split_line(char *input)
+char **split_line(char *inputt)
 {
 	size_t bsize;
 	size_t ii;
@@ -182,8 +182,8 @@ char **split_line(char *input)
 	char *ttoken;
 
 	bsize = TOK_BUFSIZE;
-	tokens = malloc(sizeof(char *) * (bsize));
-	if (tokens == NULL)
+	tokenss = malloc(sizeof(char *) * (bsize));
+	if (tokenss == NULL)
 	{
 		write(STDERR_FILENO, ": allocation error\n", 18);
 		exit(EXIT_FAILURE);
@@ -205,7 +205,7 @@ char **split_line(char *input)
 			}
 		}
 		ttoken = _strtok(NULL, TOK_DELIM);
-		tokenss[i] = ttoken;
+		tokenss[ii] = ttoken;
 	}
 
 	return (tokenss);
