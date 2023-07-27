@@ -63,7 +63,7 @@ int is_executable(data_shell *dattash)
 	char *inputt;
 
 	inputt = dattash->argss[0];
-	for (it = 0; inputt[i]; i++)
+	for (ii = 0; inputt[ii]; ii++)
 	{
 		if (input[ii] == '.')
 		{
@@ -110,7 +110,7 @@ int check_error_cmd(char *diir, data_shell *dattash)
 		return (1);
 	}
 
-	if (_strcmp(dattash->argss[0], diir) != 0)
+	if (_strcmp(dattash->args[0], diir) != 0)
 	{
 		if (access(diir, X_OK) == -1)
 		{
@@ -122,7 +122,7 @@ int check_error_cmd(char *diir, data_shell *dattash)
 	}
 	else
 	{
-		if (access(dattash->argss[0], X_OK) == -1)
+		if (access(dattash->args[0], X_OK) == -1)
 		{
 			get_error(dattash, 126);
 			return (1);
@@ -152,7 +152,7 @@ int cmd_exec(data_shell *dattash)
 		return (1);
 	if (exec == 0)
 	{
-		diir = _which(dattash->argss[0], dattash->_environ);
+		diir = _which(dattash->args[0], dattash->_environ);
 		if (check_error_cmd(diir, dattash) == 1)
 			return (1);
 	}
@@ -161,10 +161,10 @@ int cmd_exec(data_shell *dattash)
 	if (pd == 0)
 	{
 		if (exec == 0)
-			diir = _which(dattash->argss[0], dattash->_environ);
+			diir = _which(dattash->args[0], dattash->_environ);
 		else
-			diir = dattash->argss[0];
-		execve(diir + exec, dattash->argss, dattash->_environ);
+			diir = dattash->args[0];
+		execve(diir + exec, dattash->args, dattash->_environ);
 	}
 	else if (pd < 0)
 	{
@@ -184,13 +184,13 @@ int cmd_exec(data_shell *dattash)
 
 /**
  * is_cdir - checks ":" if in current directory.
- * @path: type char pointer char.
+ * @patth: type char pointer char.
  * @ii: type int pointer of index.
  * Return: 1 if the is exist in cd, 0 otherwise.
  */
 int is_cdir(char *patth, int *ii)
 {
-	if (path[*ii] == ':')
+	if (patth[*ii] == ':')
 		return (1);
 
 	while (patth[*ii] != ':' && patth[*ii])
