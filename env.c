@@ -35,7 +35,7 @@ char *_getenv(const char *namme, char **_environ)
 {
 	char *pttr_env;
 	int ii, mmov;
-	
+
 	pttr_env = NULL;
 	mmov = 0;
 	for (ii = 0; _environ[ii]; ii++)
@@ -80,7 +80,7 @@ int _env(data_shell *dattash)
  * copy_info - copies info to create
  * a new env or alias
  * @namme: name (env or alias)
- * @value: value (env or alias)
+ * @valuue: value (env or alias)
  *
  * Return: new env or alias.
  */
