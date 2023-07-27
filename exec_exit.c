@@ -3,7 +3,7 @@
 /**
  * exec_line -finds builtins ,commands
  *
- * @datash: data (args)
+ * @dattash: data (args)
  * Return: 1 on success.
  */
 int exec_line(data_shell *dattash)
@@ -24,10 +24,10 @@ int exec_line(data_shell *dattash)
 /**
  * exit_shell - exits the shell
  *
- * @datash: data relevant (status and args)
+ * @dattash: data relevant (status and args)
  * Return: 0 on success.
  */
-int exit_shell(data_shell *datash)
+int exit_shell(data_shell *dattash)
 {
 	unsigned int status;
 	int _digit;
